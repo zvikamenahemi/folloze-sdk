@@ -12,7 +12,10 @@ module.exports = {
 
     output: {
         path: './dist/',
-        filename: 'sdk-[hash].js'
+        filename: 'sdk.js',
+        libraryTarget: 'umd',
+        library: "Folloze",
+        umdNamedDefine: true
     },
 
     devtool: 'source-map',

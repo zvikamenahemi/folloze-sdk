@@ -2,12 +2,9 @@
   "name": "folloze-sdk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/sdk.js",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "typings": "typings",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "postinstall": "webpack",
   },
   "repository": {
     "type": "git",
