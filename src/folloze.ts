@@ -13,10 +13,14 @@ class FollozeSDK {
     constructor(){
         this.host = Host;
     }
-    
+
     initChild(){
         this.child = new Child();
     }
 }
 
-window["Folloze"] = new FollozeSDK();
+const flz = new FollozeSDK();
+
+window["Folloze"] = flz;
+
+export default flz;
