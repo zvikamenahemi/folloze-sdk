@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>child</title>
+</head>
+<body style="margin: 0;">
+
+Hi! I'm a child!!
+
+<p id="text">Hello world.</p>
+
+<button onclick="addText()">Click</button>
+
+<script>
+
+    Folloze.initChild();
+
+    function addText(){
+        document.getElementById("text").innerHTML += "<br/>Hello world.";
+    }
+
+
+
+</script>
+
+</body>
+</html>
