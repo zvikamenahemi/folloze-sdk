@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/sdk.js",
   "scripts": {
-    "postinstall": "webpack",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
