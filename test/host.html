@@ -13,9 +13,18 @@
     <script>
 
         var host = Folloze.host.createWidget( document.getElementById("child"), "child.html" );
-        host.on(Folloze.MessageType.GetLists, function(data, handler) {
-            handler(["hi", "how", "are", "you"]);
+
+        host.on( Folloze.MessageType.GetLists , function(data, resopnseHandler) {
+            resopnseHandler( ["hi", "how", "are", "you"] );
         });
+
+        host.on( Folloze.MessageType.SetList , function(list){
+            console.log("host is settings list as '", list, "'");
+        });
+
+        host.on( Folloze.MessageType.CTA , function(ctaName){
+            console.log("CTA clicked, name: '", ctaName, "'");
+        })
 
 
     </script>

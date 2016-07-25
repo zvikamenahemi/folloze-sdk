@@ -16,6 +16,15 @@ Hi! I'm a child!!
 
     Folloze.initChild();
 
+    Folloze.child.getLists(function (lists) {
+        console.log("got lists", lists);
+
+        Folloze.child.setList(lists[2]);
+
+        Folloze.child.sendCTA("custom cta");
+    });
+
+
     function addText(){
         document.getElementById("text").innerHTML += "<br/>Hello world.";
     }

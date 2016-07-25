@@ -10,8 +10,11 @@ export class Folloze {
 
     public host:Host;
     public MessageType = {
-        GetLists: MessageType.GetLists
+        GetLists: MessageType.GetLists,
+        SetList: MessageType.SetList,
+        CTA: MessageType.CTA
     };
+
     private _child:Child;
 
     constructor(){

@@ -1,6 +1,7 @@
 var path = require("path");
 var nodeModulesPath = path.join(__dirname, 'node_modules');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var webpack = require("webpack");
 
 console.log("start");
 
@@ -50,6 +51,7 @@ module.exports = {
             template: 'html!test/host.html',
             filename: 'host.html',
             inject: 'head'
-        })
+        }),
+        new webpack.optimize.UglifyJsPlugin()
     ],
 };

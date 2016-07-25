@@ -3,6 +3,7 @@ import ResizeSensor from "./ResizeSensor";
 import ChildMessanger from "./ChildMessanger";
 
 export class Child extends ChildMessanger{
+
     constructor(){
         super();
         this.registerMessages();
@@ -12,6 +13,16 @@ export class Child extends ChildMessanger{
     public getLists(handler){
         this.ask(MessageType.GetLists, handler);
     }
+
+    public setList(listName){
+        this.send(MessageType.SetList, listName);
+    }
+
+    public sendCTA(name) {
+        this.send(MessageType.CTA, name);
+    }
+
+    // Private
 
     private registerMessages(){
         this.on(MessageType.Acknowledged, this.onReady.bind(this))
@@ -23,9 +34,6 @@ export class Child extends ChildMessanger{
 
     private onReady(){
         this.registerResize();
-        this.getLists((lists) => {
-            console.log("got lists", lists);
-        })
     }
 
     private registerResize(){

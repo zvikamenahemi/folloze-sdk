@@ -10,7 +10,6 @@ export class HostMessanger extends Messanger{
 
     send(type:MessageType, data:any = null){
         let message = new PortMessage(type, data);
-        console.log("sending message from host", message);
         this.iframe.contentWindow.postMessage( message.getJSON(), "*");
     }
 
