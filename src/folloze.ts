@@ -1,5 +1,6 @@
 import Host from "./host/Host";
 import {Child} from "./child/Child";
+import {MessageType} from "./common/MessageTypes";
 
 /**
  * Create the basic container for the Folloze SDK
@@ -8,6 +9,9 @@ import {Child} from "./child/Child";
 export class Folloze {
 
     public host:Host;
+    public MessageType = {
+        GetLists: MessageType.GetLists
+    };
     private _child:Child;
 
     constructor(){

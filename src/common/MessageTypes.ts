@@ -1,1 +1,1 @@
-export enum MessageType { StartHandshake, Acknowledged, Resize };
+export enum MessageType { StartHandshake, Acknowledged, Resize, Question, Response, GetLists };

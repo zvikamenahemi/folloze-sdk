@@ -2,6 +2,7 @@ import {HostMessanger} from "./HostMessanger";
 import {MessageType} from "../common/MessageTypes";
 
 export class Widget {
+
     private iframe:HTMLIFrameElement;
     private messanger:HostMessanger;
 
@@ -20,7 +21,7 @@ export class Widget {
         this.messanger = new HostMessanger(this.iframe);
 
         this.messanger.on(MessageType.StartHandshake, this.onHandshake.bind(this));
-        this.messanger.on(MessageType.Resize, this.setHeight.bind(this))
+        this.messanger.on(MessageType.Resize, this.setHeight.bind(this));
     }
 
     onHandshake(){
@@ -30,6 +31,10 @@ export class Widget {
 
     setHeight(height){
         this.iframe.style.height = height + "px";
+    }
+
+    on(type:MessageType, handler){
+        return this.messanger.on(type, handler);
     }
 
 }
