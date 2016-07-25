@@ -7,7 +7,7 @@ console.log("start");
 module.exports = {
 
     entry: {
-        app: "folloze.ts"
+        app: "main.js"
     },
 
     output: {

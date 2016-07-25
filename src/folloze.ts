@@ -5,22 +5,23 @@ import {Child} from "./child/Child";
  * Create the basic container for the Folloze SDK
  */
 
-class FollozeSDK {
+export class Folloze {
 
     public host:Host;
-    private child: Child;
+    private _child:Child;
 
     constructor(){
         this.host = Host;
     }
 
     initChild(){
-        this.child = new Child();
+        this._child = new Child();
+    }
+
+    get child(){
+        if(!this._child)
+            throw new Error("Child has not been initialised! Call Folloze.initChild() before attempting to access child.");
+
+        return this._child;
     }
 }
-
-const flz = new FollozeSDK();
-
-window["Folloze"] = flz;
-
-export default flz;
