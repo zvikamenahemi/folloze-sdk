@@ -9,7 +9,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
 
 class EventQueue {
     private q = [];
-    
+
     add(ev) {
         this.q.push(ev);
     };
@@ -32,8 +32,22 @@ class EventQueue {
 }
 
 export default class ResizeSensor{
+    private ttl = 5000;
+
     constructor(private element:HTMLElement, private callback) {
         this.attachResizeEvent(element, callback);
+    }
+
+    getInitialHeight(element, callback){
+        // For some reason, the first size change is not captured, so timeout:
+        this.ttl -= 20;
+        if(this.ttl < 0)
+            return;
+        
+        if(element.offsetHeight > 0)
+            callback();
+        else
+            setTimeout( () => this.getInitialHeight(element, callback), 20 );
     }
 
     getComputedStyle(element, prop) {
@@ -128,5 +142,5 @@ export default class ResizeSensor{
         addEvent(expand, 'scroll', onScroll);
         addEvent(shrink, 'scroll', onScroll);
     }
-    
+
 }
