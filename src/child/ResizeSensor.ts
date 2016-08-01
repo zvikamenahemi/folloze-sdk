@@ -36,6 +36,7 @@ export default class ResizeSensor{
 
     constructor(private element:HTMLElement, private callback) {
         this.attachResizeEvent(element, callback);
+        this.getInitialHeight(element, callback);
     }
 
     getInitialHeight(element, callback){
@@ -43,8 +44,7 @@ export default class ResizeSensor{
         this.ttl -= 20;
         if(this.ttl < 0)
             return;
-        
-        debugger;
+
         if(element.offsetHeight > 0)
             callback();
         else
