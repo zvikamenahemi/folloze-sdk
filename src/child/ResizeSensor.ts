@@ -44,6 +44,7 @@ export default class ResizeSensor{
         if(this.ttl < 0)
             return;
         
+        debugger;
         if(element.offsetHeight > 0)
             callback();
         else
