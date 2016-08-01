@@ -1,7 +1,6 @@
 import {Messanger} from "../common/Messanger";
 import {MessageType} from "../common/MessageTypes";
 import {PortMessage} from "../common/PortMessage";
-import {MessageHandlers} from "../common/MessageHandlers";
 
 export default class ChildMessanger extends Messanger{
 

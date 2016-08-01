@@ -41,5 +41,7 @@ export class Child extends ChildMessanger{
             var height = document.body.offsetHeight;
             this.send(MessageType.Resize, height);
         });
+
+        this.send(MessageType.Resize, document.body.offsetHeight);
     }
 }
