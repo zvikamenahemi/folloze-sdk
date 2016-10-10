@@ -33,6 +33,10 @@ export class Widget {
         this.iframe.style.height = height + "px";
     }
 
+    setList(listName) {
+        this.messanger.send(MessageType.SetList, listName);
+    }
+
     on(type:MessageType, handler){
         return this.messanger.on(type, handler);
     }
