@@ -22,6 +22,15 @@ export class Child extends ChildMessanger{
         this.send(MessageType.CTA, name);
     }
 
+    public resize(){
+        new ResizeSensor(document.body, () => {
+            var height = document.body.offsetHeight;
+            this.send(MessageType.Resize, height);
+        });
+
+        this.send(MessageType.Resize, document.body.offsetHeight);
+    }
+
     // Private
 
     private registerMessages(){
@@ -33,15 +42,6 @@ export class Child extends ChildMessanger{
     }
 
     private onReady(){
-        this.registerResize();
-    }
-
-    private registerResize(){
-        new ResizeSensor(document.body, () => {
-            var height = document.body.offsetHeight;
-            this.send(MessageType.Resize, height);
-        });
-
-        this.send(MessageType.Resize, document.body.offsetHeight);
+        this.resize();
     }
 }
