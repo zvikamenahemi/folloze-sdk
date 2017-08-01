@@ -22,6 +22,10 @@ export class Child extends ChildMessanger{
         this.send(MessageType.CTA, name);
     }
 
+    public resize() {
+        this.registerResize()
+    }
+
     // Private
 
     private registerMessages(){
@@ -42,6 +46,8 @@ export class Child extends ChildMessanger{
             this.send(MessageType.Resize, height);
         });
 
+        debugger
+        console.log("resize:", document.body.offsetHeight)
         this.send(MessageType.Resize, document.body.offsetHeight);
     }
 }

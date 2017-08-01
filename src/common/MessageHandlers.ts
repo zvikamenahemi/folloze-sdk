@@ -17,7 +17,10 @@ export class MessageHandlers {
     }
 
     fire(message:PortMessage, response = null){
-        this.handlers.get(message.type).map( (handler) => handler(message.data, response) );
-    }
+        const handler = this.handlers.get(message.type)
 
+        if(handler){
+            handler.map( (handler) => handler(message.data, response) );
+        }
+    }
 }
