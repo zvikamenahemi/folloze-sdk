@@ -17,8 +17,8 @@ export class Folloze {
     private _host:Host;
     private _child:Child;
 
-    initChild(){
-        this._child = new Child();
+    initChild(autoDetectResize:boolean = true){
+        this._child = new Child(autoDetectResize);
     }
 
     initHost(node:HTMLElement, source:string){

@@ -3,11 +3,13 @@ import ResizeSensor from "./ResizeSensor";
 import ChildMessanger from "./ChildMessanger";
 
 export class Child extends ChildMessanger{
+    autoDetectResize:boolean
 
-    constructor(){
+    constructor(autoDetectResize:boolean){
         super();
         this.registerMessages();
         this.startHandshake();
+        this.autoDetectResize = autoDetectResize;
     }
 
     public getLists(handler){
@@ -23,10 +25,12 @@ export class Child extends ChildMessanger{
     }
 
     public resize(){
-        new ResizeSensor(document.body, () => {
-            var height = document.body.offsetHeight;
-            this.send(MessageType.Resize, height);
-        });
+        if(this.autoDetectResize) {
+            new ResizeSensor(document.body, () => {
+                var height = document.body.offsetHeight;
+                this.send(MessageType.Resize, height);
+            });
+        }
 
         this.send(MessageType.Resize, document.body.offsetHeight);
     }
