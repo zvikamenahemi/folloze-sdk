@@ -11,14 +11,17 @@ export class Folloze {
     public MessageType = {
         GetLists: MessageType.GetLists,
         SetList: MessageType.SetList,
-        CTA: MessageType.CTA
+        CTA: MessageType.CTA,
+        OpenItemViewer: MessageType.OpenItemViewer,
+        CloseItemViewer: MessageType.CloseItemViewer,
+        ChangeItem: MessageType.ChangeItem
     };
 
     private _host:Host;
     private _child:Child;
 
-    initChild(autoDetectResize:boolean = true){
-        this._child = new Child(autoDetectResize);
+    initChild(){
+        this._child = new Child();
     }
 
     initHost(node:HTMLElement, source:string){
