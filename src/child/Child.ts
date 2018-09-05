@@ -35,6 +35,10 @@ export class Child extends ChildMessanger{
         this.send(MessageType.ChangeItem, newItemId);
     }
 
+    public changeSearch(query) {
+        this.send(MessageType.ChangeSearch, query);
+    }
+
     public setAutoResize(value) {
         this.autoResize = value;
     }

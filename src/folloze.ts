@@ -14,7 +14,8 @@ export class Folloze {
         CTA: MessageType.CTA,
         OpenItemViewer: MessageType.OpenItemViewer,
         CloseItemViewer: MessageType.CloseItemViewer,
-        ChangeItem: MessageType.ChangeItem
+        ChangeItem: MessageType.ChangeItem,
+        ChangeSearch: MessageType.ChangeSearch
     };
 
     private _host:Host;

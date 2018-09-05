@@ -9,5 +9,6 @@ export enum MessageType {
   CTA,
   OpenItemViewer,
   CloseItemViewer,
-  ChangeItem
+  ChangeItem,
+  ChangeSearch
 };
