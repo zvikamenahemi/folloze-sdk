@@ -7,8 +7,7 @@ export enum MessageType {
   GetLists,
   SetList,
   CTA,
-  OpenItemViewer,
-  CloseItemViewer,
-  ChangeItem,
-  ChangeSearch
+  ItemViewerOpened,
+  ItemViewerClosed,
+  UrlChanged
 };

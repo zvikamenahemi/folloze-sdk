@@ -23,20 +23,16 @@ export class Child extends ChildMessanger{
         this.send(MessageType.CTA, name);
     }
 
-    public openItemViewer(itemId) {
-        this.send(MessageType.OpenItemViewer, itemId);
+    public itemViewerOpened() {
+        this.send(MessageType.ItemViewerOpened);
     }
 
-    public closeItemViewer() {
-        this.send(MessageType.CloseItemViewer);
+    public itemViewerClosed() {
+        this.send(MessageType.ItemViewerClosed);
     }
 
-    public changeItem(newItemId) {
-        this.send(MessageType.ChangeItem, newItemId);
-    }
-
-    public changeSearch(query) {
-        this.send(MessageType.ChangeSearch, query);
+    public urlChanged(url) {
+        this.send(MessageType.UrlChanged, url);
     }
 
     public setAutoResize(value) {
