@@ -46,7 +46,7 @@ export class Child extends ChildMessanger{
                 this.send(MessageType.Resize, height);
             }
         });
-        this.send(MessageType.Resize, document.body.offsetHeight);
+        this.send(MessageType.Resize, document.body.offsetHeight || '100%');
     }
 
     // Private
