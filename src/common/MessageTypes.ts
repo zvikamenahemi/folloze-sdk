@@ -9,5 +9,6 @@ export enum MessageType {
   CTA,
   ItemViewerOpened,
   ItemViewerClosed,
-  UrlChanged
+  UrlChanged,
+  ScrolledToBottom
 };

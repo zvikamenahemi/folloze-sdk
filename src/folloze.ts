@@ -14,14 +14,15 @@ export class Folloze {
         CTA: MessageType.CTA,
         ItemViewerOpened: MessageType.ItemViewerOpened,
         ItemViewerClosed: MessageType.ItemViewerClosed,
-        UrlChanged: MessageType.UrlChanged
+        UrlChanged: MessageType.UrlChanged,
+        ScrolledToBottom: MessageType.ScrolledToBottom
     };
 
     private _host:Host;
     private _child:Child;
 
-    initChild(){
-        this._child = new Child();
+    initChild(resizeFactor:number = 0){
+        this._child = new Child(resizeFactor);
     }
 
     initHost(node:HTMLElement, source:string){
