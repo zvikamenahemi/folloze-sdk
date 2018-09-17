@@ -33,6 +33,14 @@ export class Child extends ChildMessanger{
         this.send(MessageType.ItemViewerClosed);
     }
 
+    public registerToScroll() {
+        this.send(MessageType.RegisterToScroll);
+    }
+
+    public unregisterFromScroll() {
+        this.send(MessageType.UnregisterFromScroll);
+    }
+
     public urlChanged(url) {
         this.send(MessageType.UrlChanged, url);
     }

@@ -10,5 +10,7 @@ export enum MessageType {
   ItemViewerOpened,
   ItemViewerClosed,
   UrlChanged,
-  ScrolledToBottom
+  ScrolledToBottom,
+  RegisterToScroll,
+  UnregisterFromScroll
 };

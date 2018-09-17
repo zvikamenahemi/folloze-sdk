@@ -15,7 +15,9 @@ export class Folloze {
         ItemViewerOpened: MessageType.ItemViewerOpened,
         ItemViewerClosed: MessageType.ItemViewerClosed,
         UrlChanged: MessageType.UrlChanged,
-        ScrolledToBottom: MessageType.ScrolledToBottom
+        ScrolledToBottom: MessageType.ScrolledToBottom,
+        RegisterToScroll: MessageType.RegisterToScroll,
+        UnregisterFromScroll: MessageType.UnregisterFromScroll
     };
 
     private _host:Host;
