@@ -37,6 +37,10 @@ export class Widget {
         this.messanger.send(MessageType.SetList, listName);
     }
 
+    scrolledToBottom() {
+        this.messanger.send(MessageType.ScrolledToBottom);
+    }
+
     on(type:MessageType, handler){
         return this.messanger.on(type, handler);
     }
