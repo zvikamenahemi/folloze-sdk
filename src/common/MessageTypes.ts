@@ -12,5 +12,6 @@ export enum MessageType {
   UrlChanged,
   ScrolledToBottom,
   RegisterToScroll,
-  UnregisterFromScroll
+  UnregisterFromScroll,
+  ReportHeight
 };
