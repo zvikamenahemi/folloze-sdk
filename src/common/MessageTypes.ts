@@ -7,11 +7,14 @@ export enum MessageType {
   GetLists,
   SetList,
   CTA,
+  CtaOpened,
+  CtaClosed,
   ItemViewerOpened,
   ItemViewerClosed,
   UrlChanged,
   ScrolledToBottom,
   RegisterToScroll,
   UnregisterFromScroll,
-  ReportHeight
+  ReportHeight,
+  ScrolledTo
 };

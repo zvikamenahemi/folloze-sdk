@@ -25,6 +25,14 @@ export class Child extends ChildMessanger{
         this.send(MessageType.CTA, name);
     }
 
+    public ctaOpened() {
+        this.send(MessageType.CtaOpened);
+    }
+
+    public ctaClosed() {
+        this.send(MessageType.CtaClosed);
+    }
+
     public itemViewerOpened() {
         this.send(MessageType.ItemViewerOpened);
     }
@@ -47,6 +55,10 @@ export class Child extends ChildMessanger{
 
     public setAutoResize(value) {
         this.autoResize = value;
+    }
+
+    public scrolledTo(coordinates) {
+        this.send(MessageType.ScrolledTo, coordinates);
     }
 
     public resize(){
