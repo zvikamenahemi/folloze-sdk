@@ -12,13 +12,16 @@ export class Folloze {
         GetLists: MessageType.GetLists,
         SetList: MessageType.SetList,
         CTA: MessageType.CTA,
+        CtaOpened: MessageType.CtaOpened,
+        CtaClosed: MessageType.CtaClosed,
         ItemViewerOpened: MessageType.ItemViewerOpened,
         ItemViewerClosed: MessageType.ItemViewerClosed,
         UrlChanged: MessageType.UrlChanged,
         ScrolledToBottom: MessageType.ScrolledToBottom,
         RegisterToScroll: MessageType.RegisterToScroll,
         UnregisterFromScroll: MessageType.UnregisterFromScroll,
-        ReportHeight: MessageType.ReportHeight
+        ReportHeight: MessageType.ReportHeight,
+        ScrolledTo: MessageType.ScrolledTo
     };
 
     private _host:Host;
