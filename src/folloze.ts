@@ -27,8 +27,8 @@ export class Folloze {
     private _host:Host;
     private _child:Child;
 
-    initChild(resizeFactor:number = 0){
-        this._child = new Child(resizeFactor);
+    initChild(rootElement:HTMLElement = document.body){
+        this._child = new Child(rootElement);
     }
 
     initHost(node:HTMLElement, source:string){
