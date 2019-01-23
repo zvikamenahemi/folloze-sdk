@@ -27,7 +27,7 @@ export class Widget {
     onHandshake(){
         // Handshake received. Acknowledged.
         this.messanger.send(MessageType.Acknowledged);
-        this.messanger.send(MessageType.ReportHeight, document.documentElement.clientWidth);
+        this.messanger.send(MessageType.ReportHeight, document.documentElement.clientHeight);
     }
 
     setHeight(height){
