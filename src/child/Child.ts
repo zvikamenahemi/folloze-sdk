@@ -4,13 +4,13 @@ import ChildMessanger from "./ChildMessanger";
 
 export class Child extends ChildMessanger{
     private autoResize:boolean = true;
-    private resizeFactor:number;
+    private rootElement:HTMLElement;
 
-    constructor(resizeFactor:number){
+    constructor(rootElement:HTMLElement){
         super();
         this.registerMessages();
         this.startHandshake();
-        this.resizeFactor = resizeFactor;
+        this.rootElement = rootElement;
     }
 
     public getLists(handler){
@@ -62,13 +62,13 @@ export class Child extends ChildMessanger{
     }
 
     public resize(){
-        new ResizeSensor(document.body, () => {
+        new ResizeSensor(this.rootElement, () => {
             if(this.autoResize) {
-                var height = document.body.offsetHeight + this.resizeFactor;
+                var height = this.rootElement.offsetHeight;
                 this.send(MessageType.Resize, height);
             }
         });
-        this.send(MessageType.Resize, document.body.offsetHeight + this.resizeFactor || '100%');
+        this.send(MessageType.Resize, this.rootElement.offsetHeight || '100%');
     }
 
     // Private
