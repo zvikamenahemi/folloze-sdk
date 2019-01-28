@@ -7,7 +7,6 @@ export class Widget {
     private messanger:HostMessanger;
 
     constructor( private node:HTMLElement, private source:string ){
-
         this.iframe = document.createElement("iframe");
         this.iframe.src = source;
         this.iframe.style.width = "100%";
@@ -15,6 +14,7 @@ export class Widget {
         node.appendChild(this.iframe);
 
         this.registerMessages();
+        window.addEventListener('resize', this.onResize.bind(this));
     }
 
     registerMessages(){
@@ -27,6 +27,10 @@ export class Widget {
     onHandshake(){
         // Handshake received. Acknowledged.
         this.messanger.send(MessageType.Acknowledged);
+        this.onResize();
+    }
+
+    onResize() {
         this.messanger.send(MessageType.ReportHeight, document.documentElement.clientHeight);
     }
 
