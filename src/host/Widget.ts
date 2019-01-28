@@ -5,14 +5,15 @@ export class Widget {
 
     private iframe:HTMLIFrameElement;
     private messanger:HostMessanger;
+    private height:number;
 
     constructor( private node:HTMLElement, private source:string ){
+        this.height = null;
         this.iframe = document.createElement("iframe");
         this.iframe.src = source;
         this.iframe.style.width = "100%";
         this.iframe.style.border = "0";
         node.appendChild(this.iframe);
-
         this.registerMessages();
         window.addEventListener('resize', this.onResize.bind(this));
     }
@@ -31,7 +32,11 @@ export class Widget {
     }
 
     onResize() {
-        this.messanger.send(MessageType.ReportHeight, document.documentElement.clientHeight);
+        if(document.documentElement.clientHeight == this.height) {
+            return;
+        }
+        this.height = document.documentElement.clientHeight;
+        this.messanger.send(MessageType.ReportHeight, this.height);
     }
 
     setHeight(height){
