@@ -32,10 +32,11 @@ export class Widget {
     }
 
     onResize() {
-        if(document.documentElement.clientHeight == this.height) {
+        if(window.innerHeight == this.height) {
             return;
         }
-        this.height = document.documentElement.clientHeight;
+
+        this.height = window.innerHeight;
         this.messanger.send(MessageType.ReportHeight, this.height);
     }
 
