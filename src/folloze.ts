@@ -21,7 +21,8 @@ export class Folloze {
         RegisterToScroll: MessageType.RegisterToScroll,
         UnregisterFromScroll: MessageType.UnregisterFromScroll,
         ReportHeight: MessageType.ReportHeight,
-        ScrolledTo: MessageType.ScrolledTo
+        ScrolledTo: MessageType.ScrolledTo,
+        LiveEventClosed: MessageType.LiveEventClosed
     };
 
     private _host:Host;
@@ -31,8 +32,8 @@ export class Folloze {
         this._child = new Child(rootElement);
     }
 
-    initHost(node:HTMLElement, source:string){
-        this._host = new Host(node, source);
+    initHost(node:HTMLElement, source:string, args?:Object){
+        this._host = new Host(node, source, args);
     }
 
     get child(){

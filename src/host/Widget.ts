@@ -7,12 +7,17 @@ export class Widget {
     private messanger:HostMessanger;
     private height:number;
 
-    constructor( private node:HTMLElement, private source:string ){
+    constructor( private node:HTMLElement, private source:string, args?:Object ){
         this.height = null;
         this.iframe = document.createElement("iframe");
         this.iframe.src = source;
         this.iframe.style.width = "100%";
         this.iframe.style.border = "0";
+        if (args && args.hasOwnProperty('iframeAttributes')) {
+            for (let key in args['iframeAttributes']) {
+                this.iframe.setAttribute(key, args['iframeAttributes'][key])
+            }
+        }
         node.appendChild(this.iframe);
         this.registerMessages();
         window.addEventListener('resize', this.onResize.bind(this));
@@ -54,6 +59,11 @@ export class Widget {
 
     on(type:MessageType, handler){
         return this.messanger.on(type, handler);
+    }
+
+    liveEventClosed() {
+        console.log("messanger send liveEventClosed")
+        this.messanger.send(MessageType.LiveEventClosed);
     }
 
 }
