@@ -62,7 +62,6 @@ export class Widget {
     }
 
     liveEventClosed() {
-        console.log("messanger send liveEventClosed")
         this.messanger.send(MessageType.LiveEventClosed);
     }
 

@@ -53,6 +53,10 @@ export class Child extends ChildMessanger{
         this.send(MessageType.UrlChanged, url);
     }
 
+    public participantLeftMeeting() {
+        this.send(MessageType.ParticipantLeftMeeting);
+    }
+
     public setAutoResize(value) {
         this.autoResize = value;
     }
