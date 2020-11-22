@@ -53,6 +53,10 @@ export class Child extends ChildMessanger{
         this.send(MessageType.UrlChanged, url);
     }
 
+    public closeLiveEvent() {
+        this.send(MessageType.CloseLiveEvent);
+    }
+
     public setAutoResize(value) {
         this.autoResize = value;
     }
