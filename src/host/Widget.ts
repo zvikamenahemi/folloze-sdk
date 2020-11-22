@@ -61,8 +61,8 @@ export class Widget {
         return this.messanger.on(type, handler);
     }
 
-    liveEventClosed() {
-        this.messanger.send(MessageType.LiveEventClosed);
+    closeLiveEvent() {
+        this.messanger.send(MessageType.CloseLiveEvent);
     }
 
 }

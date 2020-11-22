@@ -22,7 +22,6 @@ export class Folloze {
         UnregisterFromScroll: MessageType.UnregisterFromScroll,
         ReportHeight: MessageType.ReportHeight,
         ScrolledTo: MessageType.ScrolledTo,
-        LiveEventClosed: MessageType.LiveEventClosed,
         CloseLiveEvent: MessageType.CloseLiveEvent
     };
 
