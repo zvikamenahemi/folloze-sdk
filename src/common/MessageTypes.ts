@@ -18,5 +18,5 @@ export enum MessageType {
   ReportHeight,
   ScrolledTo,
   LiveEventClosed,
-  ParticipantLeftMeeting
+  CloseLiveEvent
 };

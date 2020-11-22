@@ -23,7 +23,7 @@ export class Folloze {
         ReportHeight: MessageType.ReportHeight,
         ScrolledTo: MessageType.ScrolledTo,
         LiveEventClosed: MessageType.LiveEventClosed,
-        ParticipantLeftMeeting: MessageType.ParticipantLeftMeeting
+        CloseLiveEvent: MessageType.CloseLiveEvent
     };
 
     private _host:Host;
