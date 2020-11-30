@@ -57,6 +57,10 @@ export class Child extends ChildMessanger{
         this.send(MessageType.CloseLiveEvent);
     }
 
+    public liveEventError() {
+        this.send(MessageType.LiveEventError);
+    }
+
     public setAutoResize(value) {
         this.autoResize = value;
     }
