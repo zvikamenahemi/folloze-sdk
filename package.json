@@ -1,6 +1,6 @@
 {
   "name": "folloze-sdk",
-  "version": "2.2.8",
+  "version": "2.2.9",
   "description": "",
   "main": "dist/sdk.js",
   "scripts": {
