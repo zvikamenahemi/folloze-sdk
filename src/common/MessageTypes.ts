@@ -17,5 +17,6 @@ export enum MessageType {
   UnregisterFromScroll,
   ReportHeight,
   ScrolledTo,
-  CloseLiveEvent
+  CloseLiveEvent,
+  LiveEventError
 };
