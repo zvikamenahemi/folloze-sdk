@@ -57,6 +57,10 @@ export class Child extends ChildMessanger{
         this.send(MessageType.CloseLiveEvent);
     }
 
+    public liveEventLoaded() {
+        this.send(MessageType.LiveEventLoaded);
+    }
+
     public liveEventError() {
         this.send(MessageType.LiveEventError);
     }

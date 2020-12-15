@@ -18,5 +18,6 @@ export enum MessageType {
   ReportHeight,
   ScrolledTo,
   CloseLiveEvent,
-  LiveEventError
+  LiveEventError,
+  LiveEventLoaded
 };
